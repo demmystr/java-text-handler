@@ -1,7 +1,7 @@
 package app;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.File;
 
 public class Main {
 
@@ -29,13 +29,13 @@ public class Main {
     }
 
     private static boolean isBasePathExists() {
-        java.io.File basePath = new java.io.File(BASE_PATH);
+        File basePath = new File(BASE_PATH);
         return basePath.exists() && basePath.isDirectory();
     }
 
     private static void createBasePath() {
         try {
-            java.io.File basePath = new java.io.File(BASE_PATH);
+            File basePath = new File(BASE_PATH);
             if (!basePath.exists()) {
                 boolean success = basePath.mkdir();
                 if (!success) {
